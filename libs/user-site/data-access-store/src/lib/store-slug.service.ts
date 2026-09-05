@@ -8,6 +8,7 @@ import { normalizeSlug } from './normalize-slug';
  * Hostnames that never carry a store subdomain, so their first label must not be
  * mistaken for a slug. `localhost`, loopback and bare IPs are dev; `www` and the
  * apex are the marketing site.
+ */
 const NON_TENANT_LABELS = new Set(['www', 'localhost', 'app', 'api', 'invento-user-site']);
 
 /** Resolves `layali.inventoai.com` -> `layali`; anything without a tenant label -> ''. */
