@@ -139,11 +139,11 @@ export class Home implements OnInit {
   storeData = signal<StoreResponse | null>(null);
   storeUrl = computed(() => {
     const slug = this.storeData()?.slug || 'yourbrand';
-    return `http://localhost:4300/${slug}`;
+    return `https://invento-user-site.vercel.app/${slug}`;
   });
   storeDomain = computed(() => {
     const slug = this.storeData()?.slug || 'yourbrand';
-    return `http://localhost:4300/${slug}.com`;
+    return `https://invento-user-site.vercel.app/${slug}.com`;
   });
   storeName = computed(() => {
     return this.storeData()?.name || 'YourBrand';
