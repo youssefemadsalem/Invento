@@ -11,6 +11,8 @@ interface GoogleIdInitOptions {
   callback: (response: GoogleIdCredentialResponse) => void;
   auto_select?: boolean;
   cancel_on_tap_outside?: boolean;
+  itp_support?: boolean;
+  use_fedcm_for_prompt?: boolean;
 }
 
 interface GoogleIdRenderButtonOptions {
@@ -117,6 +119,8 @@ export class GoogleAuthService {
           },
           auto_select: false,
           cancel_on_tap_outside: true,
+          itp_support: true,
+          use_fedcm_for_prompt: true,
         });
         this.isInitialized = true;
         return true;
