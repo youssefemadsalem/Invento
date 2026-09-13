@@ -29,9 +29,9 @@
   }
 
   @if (actionMessage()) {
-    <div hlmAlert class="bg-success/10 text-success rounded-xl text-sm">
-      <ng-icon name="lucideCheckCircle2" size="18" />
-      <p hlmAlertDescription class="text-success flex items-center justify-between gap-3">
+    <div hlmAlert class="bg-emerald-50 text-emerald-600 dark:bg-emerald-500/10 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/20 rounded-xl text-sm">
+      <ng-icon name="lucideCheckCircle2" size="18" class="text-emerald-600 dark:text-emerald-400" />
+      <p hlmAlertDescription class="flex items-center justify-between gap-3 text-emerald-600 dark:text-emerald-400">
         <span>{{ actionMessage() }}</span>
         <button class="ms-auto font-medium text-xs underline shrink-0" (click)="actionMessage.set(null)">
           Dismiss
@@ -335,7 +335,7 @@
               <div class="flex xl:flex-row flex-col xl:items-center gap-4">
                 <div class="flex-1 min-w-0">
                   <div class="flex flex-wrap items-center gap-2">
-                    <button class="font-semibold hover:underline" (click)="openSupplier(offer)">
+                    <button class="font-semibold hover:underline truncate max-w-full" (click)="openSupplier(offer)">
                       {{ offer.supplierName }}
                     </button>
                     @if (offer.isRecommended) {
@@ -365,7 +365,7 @@
                       >
                     }
                   </div>
-                  <p hlmMuted class="mt-1">{{ offer.supplierEmail }}</p>
+                  <p hlmMuted class="mt-1 truncate">{{ offer.supplierEmail }}</p>
                 </div>
                 <div class="gap-4 grid grid-cols-2 sm:grid-cols-4 min-w-0 xl:min-w-[430px]">
                   <div>
