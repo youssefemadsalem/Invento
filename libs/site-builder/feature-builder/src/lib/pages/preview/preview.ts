@@ -128,7 +128,7 @@ export class Preview {
       .toLowerCase()
       .trim()
       .replace(/[^a-z0-9-]/g, '');
-    return `https://localhost/${cleanDomain || 'my-site'}.com`;
+    return `https://invento-user-site.vercel.app/${cleanDomain || 'my-site'}`;
   });
 
   readonly skeletonThemes = Array(4);
