@@ -129,9 +129,5 @@ export const appRoutes: Routes = [
         (m) => m.mailboxCallbackRoutes,
       ),
   },
-  {
-    path: 'not-found',
-    loadComponent: () => import('./pages/not-found/not-found').then((c) => c.NotFound),
-  },
-  { path: '**', redirectTo: 'not-found' },
+  { path: '**', redirectTo: 'home' },
 ];
