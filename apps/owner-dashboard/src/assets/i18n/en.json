@@ -248,5 +248,9 @@
   "pagination.previous": "Previous",
   "pagination.next": "Next",
   "pagination.go_to_previous": "Go to previous page",
-  "pagination.go_to_next": "Go to next page"
+  "pagination.go_to_next": "Go to next page",
+  "not_found.label": "// SYSTEM_ERROR",
+  "not_found.title": "Page Not Found",
+  "not_found.description": "There is no active route at this destination in the ecosystem registry.",
+  "not_found.action": "Reboot Interface"
 }

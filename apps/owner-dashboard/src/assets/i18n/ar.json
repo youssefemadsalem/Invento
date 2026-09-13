@@ -248,5 +248,9 @@
   "pagination.previous": "السابق",
   "pagination.next": "التالي",
   "pagination.go_to_previous": "الذهاب إلى الصفحة السابقة",
-  "pagination.go_to_next": "الذهاب إلى الصفحة التالية"
+  "pagination.go_to_next": "الذهاب إلى الصفحة التالية",
+  "not_found.label": "// خطأ_في_النظام",
+  "not_found.title": "الصفحة غير موجودة",
+  "not_found.description": "لا يوجد مسار نشط لهذه الوجهة في سجل النظام.",
+  "not_found.action": "العودة إلى الواجهة"
 }
