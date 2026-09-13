@@ -47,7 +47,7 @@ export const appConfig: ApplicationConfig = {
           apiBaseUrl: resolveApiBaseUrl(environment, platformId),
           postLoginRoute: '/home',
           tokenStorageKey: 'invento',
-          googleClientId: environment.googleClientId,
+          googleClientId: process.env['GOOGLE_CLIENT_ID'] as string,
           verifyEmailRedirect: '/auth/login',
           authBasePath: '/auth',
           authRole: 'owner',

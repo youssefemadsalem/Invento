@@ -39,7 +39,7 @@ function buildAuthConfig(builderState: BuilderState, platformId: object): AuthCo
     apiBaseUrl: resolveApiBaseUrl(environment, platformId),
     postLoginRoute: '/build/brainstorm',
     tokenStorageKey: 'invento',
-    googleClientId: environment.googleClientId,
+    googleClientId: process.env['GOOGLE_CLIENT_ID'] as string,
     verifyEmailRedirect: '/auth/login',
     authBasePath: '/auth',
     authRole: 'owner',
