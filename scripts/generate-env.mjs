@@ -55,7 +55,7 @@ const APPS = [
     fields: [
       { key: 'apiUrl', prodEnv: 'SITE_BUILDER_API_URL', devConstant: '', devComment: API_DEV_COMMENT },
       { key: 'ssrApiUrl', prodEnv: 'SITE_BUILDER_API_URL', devEnv: 'DEV_API_TARGET' },
-
+      { key: 'googleClientId', env: 'GOOGLE_CLIENT_ID' },
       { key: 'inventoDashboardUrl', env: 'SITE_BUILDER_DASHBOARD_URL' },
       { key: 'inventoLoginUrl', env: 'SITE_BUILDER_LOGIN_URL', omitWhenEmpty: true },
     ],
@@ -65,7 +65,7 @@ const APPS = [
     fields: [
       { key: 'apiUrl', prodEnv: 'USER_SITE_API_URL', devConstant: '', devComment: API_DEV_COMMENT },
       { key: 'ssrApiUrl', prodEnv: 'USER_SITE_API_URL', devEnv: 'DEV_API_TARGET' },
-
+      { key: 'googleClientId', env: 'GOOGLE_CLIENT_ID' },
     ],
   },
   {
@@ -73,7 +73,7 @@ const APPS = [
     fields: [
       { key: 'apiUrl', prodEnv: 'OWNER_DASHBOARD_API_URL', devConstant: '', devComment: API_DEV_COMMENT },
       { key: 'ssrApiUrl', prodEnv: 'OWNER_DASHBOARD_API_URL', devEnv: 'DEV_API_TARGET' },
-
+      { key: 'googleClientId', env: 'GOOGLE_CLIENT_ID' },
       { key: 'siteBuilderUrl', env: 'OWNER_DASHBOARD_SITE_BUILDER_URL' },
     ],
   },
