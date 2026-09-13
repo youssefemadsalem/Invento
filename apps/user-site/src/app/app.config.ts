@@ -83,7 +83,7 @@ export const appConfig: ApplicationConfig = {
           apiBaseUrl: resolveApiBaseUrl(environment, platformId),
           postLoginRoute: '/',
           tokenStorageKey: 'usersite',
-          googleClientId: process.env['GOOGLE_CLIENT_ID'] as string,
+          googleClientId: process.env['NX_PUBLIC_GOOGLE_CLIENT_ID'] as string,
           verifyEmailRedirect: () => `${authBasePath()}/login`,
           authBasePath,
           authRole: 'customer',
