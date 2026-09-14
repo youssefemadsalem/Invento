@@ -7,28 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="./icon.png" />
     <script>
-      if (
-        // check if user had saved dark as their
-        // theme when accessing page before
-        localStorage.theme === 'dark' ||
-        // or user's requesting dark color
-        // scheme through operating system
-        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-      ) {
-        // then if we have access to the document and the element
-        // we add the dark class to the html element and
-        // store the dark value in the localStorage
+      function getTheme() {
+        var match = document.cookie.match(new RegExp('(^| )invento_theme=([^;]+)'));
+        if (match && (match[2] === 'light' || match[2] === 'dark')) return match[2];
+        try {
+          var legacy = localStorage.getItem('invento_theme');
+          if (legacy === 'light' || legacy === 'dark') return legacy;
+        } catch (e) {}
+        return 'light';
+      }
+      var theme = getTheme();
+      if (theme === 'dark') {
         if (document && document.documentElement) {
           document.documentElement.classList.add('dark');
-          localStorage.setItem('theme', 'dark');
+          document.documentElement.style.colorScheme = 'dark';
         }
       } else {
-        // else if we have access to the document and the element
-        // we remove the dark class to the html element and
-        // store the value light in the localStorage
         if (document && document.documentElement) {
           document.documentElement.classList.remove('dark');
-          localStorage.setItem('theme', 'light');
+          document.documentElement.style.colorScheme = 'light';
         }
       }
     </script>
