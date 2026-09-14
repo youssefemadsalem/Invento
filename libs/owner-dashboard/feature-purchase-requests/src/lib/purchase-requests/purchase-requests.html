@@ -29,14 +29,14 @@
   }
 
   @if (actionMessage()) {
-    <div hlmAlert class="bg-emerald-50 text-emerald-600 dark:bg-emerald-500/10 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/20 rounded-xl text-sm">
-      <ng-icon name="lucideCheckCircle2" size="18" class="text-emerald-600 dark:text-emerald-400" />
-      <p hlmAlertDescription class="flex items-center justify-between gap-3 text-emerald-600 dark:text-emerald-400">
+    <div class="flex items-center justify-between gap-3 p-4 mb-4 bg-emerald-50 text-emerald-600 dark:bg-emerald-500/10 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/20 rounded-xl text-sm">
+      <div class="flex items-center gap-3">
+        <ng-icon name="lucideCheckCircle2" size="18" class="text-emerald-600 dark:text-emerald-400 shrink-0" />
         <span>{{ actionMessage() }}</span>
-        <button class="ms-auto font-medium text-xs underline shrink-0" (click)="actionMessage.set(null)">
-          Dismiss
-        </button>
-      </p>
+      </div>
+      <button class="font-medium text-xs underline shrink-0 hover:text-emerald-700 dark:hover:text-emerald-300" (click)="actionMessage.set(null)">
+        Dismiss
+      </button>
     </div>
   }
 
@@ -332,11 +332,11 @@
               [class.ring-1]="offer.isRecommended"
               [class.border-primary]="offer.isRecommended"
             >
-              <div class="flex xl:flex-row flex-col xl:items-center gap-4">
-                <div class="flex-1 min-w-0">
+              <div class="flex xl:flex-row flex-col xl:items-start gap-4">
+                <div class="flex-1 min-w-0 xl:pe-4">
                   <div class="flex flex-wrap items-center gap-2">
-                    <button class="font-semibold hover:underline truncate max-w-full" (click)="openSupplier(offer)">
-                      {{ offer.supplierName }}
+                    <button class="font-semibold hover:underline text-start break-words" (click)="openSupplier(offer)">
+                      {{ offer.supplierName || 'Unknown Supplier' }}
                     </button>
                     @if (offer.isRecommended) {
                       <span hlmBadge class="bg-primary/10 text-[11px] text-primary"
@@ -365,9 +365,9 @@
                       >
                     }
                   </div>
-                  <p hlmMuted class="mt-1 truncate">{{ offer.supplierEmail }}</p>
+                  <p hlmMuted class="mt-1 break-all">{{ offer.supplierEmail }}</p>
                 </div>
-                <div class="gap-4 grid grid-cols-2 sm:grid-cols-4 min-w-0 xl:min-w-[430px]">
+                <div class="gap-4 grid grid-cols-2 sm:grid-cols-4 shrink-0 w-full xl:w-[450px]">
                   <div>
                     <p hlmMuted>Unit price</p>
                     <p class="mt-1">
