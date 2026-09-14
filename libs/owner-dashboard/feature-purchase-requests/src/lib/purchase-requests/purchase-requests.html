@@ -231,11 +231,11 @@
 </div>
 
 @if (selected(); as request) {
-  <hlm-sheet [state]="'open'" side="right" (stateChanged)="onDetailStateChanged($event)">
-    <hlm-sheet-content
-      *hlmSheetPortal="let ctx"
+  <hlm-dialog [state]="'open'" (stateChanged)="onDetailStateChanged($event)">
+    <hlm-dialog-content
+      *brnDialogContent="let ctx"
       [showCloseButton]="false"
-      class="flex flex-col gap-0 p-0 w-full sm:max-w-5xl overflow-y-auto"
+      class="flex flex-col gap-0 p-0 w-full sm:max-w-5xl max-h-[100dvh] sm:max-h-[90vh] overflow-y-auto"
     >
     <div
       class="top-0 z-10 sticky flex justify-between items-center gap-3 bg-background/95 backdrop-blur px-5 py-4 border-border border-b"
@@ -513,8 +513,8 @@
         }
       </section>
     </div>
-    </hlm-sheet-content>
-  </hlm-sheet>
+    </hlm-dialog-content>
+  </hlm-dialog>
 }
 
 @if (showCreate()) {
