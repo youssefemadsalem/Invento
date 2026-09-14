@@ -56,3 +56,13 @@
     transform: translate(0px, 0px);
   }
 }
+
+.loader-logo-path {
+  stroke: #3e474e;
+}
+
+:host-context(.dark) .loader-logo-path,
+:global(.dark) .loader-logo-path,
+html.dark .loader-logo-path {
+  stroke: #f0f0f0;
+}
