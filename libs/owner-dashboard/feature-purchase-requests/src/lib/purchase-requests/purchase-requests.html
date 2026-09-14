@@ -332,10 +332,10 @@
               [class.ring-1]="offer.isRecommended"
               [class.border-primary]="offer.isRecommended"
             >
-              <div class="flex xl:flex-row flex-col xl:items-start gap-4">
-                <div class="flex-1 min-w-0 xl:pe-4">
+              <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-6 lg:items-center">
+                <div class="lg:col-span-4 min-w-0">
                   <div class="flex flex-wrap items-center gap-2">
-                    <button class="font-semibold hover:underline text-start break-words" (click)="openSupplier(offer)">
+                    <button class="font-semibold hover:underline text-start truncate max-w-full" (click)="openSupplier(offer)">
                       {{ offer.supplierName || 'Unknown Supplier' }}
                     </button>
                     @if (offer.isRecommended) {
@@ -365,12 +365,12 @@
                       >
                     }
                   </div>
-                  <p hlmMuted class="mt-1 break-all">{{ offer.supplierEmail }}</p>
+                  <p hlmMuted class="mt-1 truncate">{{ offer.supplierEmail }}</p>
                 </div>
-                <div class="gap-4 grid grid-cols-2 sm:grid-cols-4 shrink-0 w-full xl:w-[450px]">
+                <div class="lg:col-span-6 gap-4 grid grid-cols-2 sm:grid-cols-4 min-w-0">
                   <div>
                     <p hlmMuted>Unit price</p>
-                    <p class="mt-1">
+                    <p class="mt-1 truncate">
                       {{
                         offer.unitAmount === null
                           ? '—'
@@ -380,17 +380,17 @@
                   </div>
                   <div>
                     <p hlmMuted>Qty</p>
-                    <p class="mt-1">{{ offer.quantity ?? request.quantity }}</p>
+                    <p class="mt-1 truncate">{{ offer.quantity ?? request.quantity }}</p>
                   </div>
                   <div>
                     <p hlmMuted>Delivery</p>
-                    <p class="mt-1">
+                    <p class="mt-1 truncate">
                       {{ offer.deliveryDays === null ? '—' : offer.deliveryDays + 'd' }}
                     </p>
                   </div>
                   <div>
                     <p hlmMuted>Total</p>
-                    <p class="mt-1">
+                    <p class="mt-1 truncate">
                       {{
                         offer.totalAmount === null
                           ? '—'
@@ -399,7 +399,7 @@
                     </p>
                   </div>
                 </div>
-                <div class="flex xl:justify-end items-center gap-1 xl:w-[250px]">
+                <div class="lg:col-span-2 flex lg:justify-end items-center gap-1">
                   <span hlmBadge [class]="offerStatusClass(offer.status)">{{
                     offer.status | titlecase
                   }}</span>
